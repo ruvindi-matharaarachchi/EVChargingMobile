@@ -1,4 +1,4 @@
-package com.example.evchargingmobile.ui.admin
+package com.example.evchargingmobile.admin
 
 import android.content.Intent
 import android.os.Bundle
@@ -20,15 +20,21 @@ class AdminDashboardActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_admin_dashboard)
         
+        android.util.Log.d("AdminDashboardActivity", "Activity created successfully")
+        
         sessionStore = SessionStore(this)
         adminRepository = AdminRepository(com.example.evchargingmobile.data.api.AdminApi())
         
         // Check authentication
         if (!sessionStore.isLoggedIn()) {
+            android.util.Log.d("AdminDashboardActivity", "Not logged in, navigating to auth")
             navigateToAuth()
             return
         }
         
+        android.util.Log.d("AdminDashboardActivity", "User is logged in, continuing with setup")
+        
+        android.util.Log.d("AdminDashboardActivity", "Setting up UI")
         setupUI()
         loadCounts()
     }
@@ -36,13 +42,13 @@ class AdminDashboardActivity : AppCompatActivity() {
     private fun setupUI() {
         // Manage Owners button
         findViewById<android.widget.Button>(R.id.btnManageOwners).setOnClickListener {
-            val intent = Intent(this, com.example.evchargingmobile.admin.ManageOwnersActivity::class.java)
+            val intent = Intent(this, ManageOwnersActivity::class.java)
             startActivity(intent)
         }
         
         // Manage Operators button
         findViewById<android.widget.Button>(R.id.btnManageOperators).setOnClickListener {
-            val intent = Intent(this, com.example.evchargingmobile.admin.ManageOperatorsActivity::class.java)
+            val intent = Intent(this, ManageOperatorsActivity::class.java)
             startActivity(intent)
         }
         

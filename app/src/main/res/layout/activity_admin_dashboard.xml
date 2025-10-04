@@ -1,123 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/root"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:gravity="center"
+        android:text="Admin Dashboard"
+        android:textAppearance="@style/TextAppearance.Material3.HeadlineMedium"
+        android:textColor="@color/primary" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
-
-        <!-- Header -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"
-            android:layout_marginBottom="24dp">
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Admin Panel"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvAdminName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Administrator"
-                    android:textSize="16sp"
-                    android:textColor="@android:color/darker_gray" />
-
-            </LinearLayout>
-
-            <Button
-                android:id="@+id/btnLogout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Logout"
-                android:textSize="12sp"
-                android:backgroundTint="@android:color/holo_red_dark" />
-
-        </LinearLayout>
-
-        <!-- Quick Stats -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="System Overview"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:elevation="4dp">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@android:color/holo_blue_light"
-                android:padding="16dp"
-                android:layout_marginEnd="8dp">
+                android:padding="16dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Users"
-                    android:textSize="12sp"
-                    android:textColor="@android:color/white" />
+                    android:layout_marginBottom="8dp"
+                    android:text="Manage EV Owners"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" />
 
                 <TextView
-                    android:id="@+id/tvTotalUsers"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvOwnersCount"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="16dp"
+                    android:text="Owners: Loading..."
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@android:color/holo_green_light"
-                android:padding="16dp"
-                android:layout_marginStart="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <Button
+                    android:id="@+id/btnManageOwners"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Active Stations"
-                    android:textSize="12sp"
-                    android:textColor="@android:color/white" />
-
-                <TextView
-                    android:id="@+id/tvActiveStations"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+                    android:text="Manage Owners" />
 
             </LinearLayout>
 
@@ -126,131 +63,49 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/card_background"
+            android:padding="16dp"
+            android:elevation="4dp">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:orientation="vertical"
-                android:background="@android:color/holo_orange_light"
-                android:padding="16dp"
-                android:layout_marginEnd="8dp">
+                android:padding="16dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Total Bookings"
-                    android:textSize="12sp"
-                    android:textColor="@android:color/white" />
+                    android:layout_marginBottom="8dp"
+                    android:text="Manage Station Operators"
+                    android:textAppearance="@style/TextAppearance.Material3.HeadlineSmall" />
 
                 <TextView
-                    android:id="@+id/tvTotalBookings"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvOperatorsCount"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="0"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="16dp"
+                    android:text="Operators: Loading..."
+                    android:textAppearance="@style/TextAppearance.Material3.BodyMedium" />
+
+                <Button
+                    android:id="@+id/btnManageOperators"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Manage Operators" />
 
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:background="@android:color/holo_purple"
-                android:padding="16dp"
-                android:layout_marginStart="8dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Revenue"
-                    android:textSize="12sp"
-                    android:textColor="@android:color/white" />
-
-                <TextView
-                    android:id="@+id/tvRevenue"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rs. 0"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Admin Menu -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Administration"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/btnManageUsers"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="👥 Manage Users"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"
-                android:drawableStart="@android:drawable/ic_menu_myplaces"
-                android:drawablePadding="8dp" />
-
-            <Button
-                android:id="@+id/btnManageStations"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="🔌 Manage Stations"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"
-                android:drawableStart="@android:drawable/ic_menu_mapmode"
-                android:drawablePadding="8dp" />
-
-            <Button
-                android:id="@+id/btnViewBookings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📋 View All Bookings"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"
-                android:drawableStart="@android:drawable/ic_menu_agenda"
-                android:drawablePadding="8dp" />
-
-            <Button
-                android:id="@+id/btnSystemSettings"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="⚙️ System Settings"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"
-                android:drawableStart="@android:drawable/ic_menu_preferences"
-                android:drawablePadding="8dp" />
-
-            <Button
-                android:id="@+id/btnReports"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="📊 Reports &amp; Analytics"
-                android:textSize="16sp"
-                android:layout_marginBottom="8dp"
-                android:drawableStart="@android:drawable/ic_menu_manage"
-                android:drawablePadding="8dp" />
 
         </LinearLayout>
 
     </LinearLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        style="@style/Widget.Material3.Button.TextButton" />
+
+</LinearLayout>
