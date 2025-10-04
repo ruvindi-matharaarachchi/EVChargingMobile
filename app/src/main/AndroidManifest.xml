@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +15,7 @@
         android:theme="@style/Theme.EVChargingMobile"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.common.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +23,58 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.auth.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.auth.RegisterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.owner.OwnerRegisterActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.admin.AdminDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.owner.OwnerDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.common.DashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.station.StationListActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.operator.OperatorScanActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.owner.BookingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.owner.OwnerEditActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.owner.MyReservationsActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.owner.RescheduleActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".ui.common.DatabaseViewerActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
